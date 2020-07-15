@@ -592,31 +592,30 @@ ul {
 
 .header-content-title {
   font-family: "Roboto Slab", serif;
-  font-size: 3.75em;
+  color: #ffffff;
   font-weight: 300;
   line-height: 1.2em;
   letter-spacing: 0.08em;
-  color: #ffffff;
 }
 
 .header-content-buttons {
   z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .header-content-btn {
-  display: inline-block;
-  padding: 17px 72px 19px 70px;
-  margin: 10px;
-  height: 60px;
-  border: solid 2px #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
   text-align: center;
-  font-size: 18px;
-  line-height: 1.33;
-  letter-spacing: 1.89px;
+  background-color: rgba(255, 255, 255, 0.1);
   -webkit-transition: background-color .5s;
   -o-transition: background-color .5s;
   transition: background-color .5s;
+  line-height: 1.33;
+  border: solid 2px #ffffff;
 }
 
 .header-content-btn:hover {
@@ -629,9 +628,7 @@ ul {
 
 .skills-container {
   display: grid;
-  grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
+  padding-bottom: 20px;
 }
 
 .skills-block {
@@ -1066,6 +1063,7 @@ ul {
   max-width: 1340px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 20px;
 }
 
 .footer-icon {
@@ -1083,8 +1081,8 @@ ul {
 .footer-icon:after {
   content: "";
   position: absolute;
-  width: 115px;
-  left: 45%;
+  width: 75px;
+  left: calc(50% - 75px / 2);
   bottom: -7px;
   height: 2px;
   background-color: rgba(99, 117, 136, 0.5);
@@ -1121,8 +1119,87 @@ ul {
   font-size: 2.3em;
 }
 
-@media (max-width: 992) {
+@media (min-width: 992px) {
   .header-content-title {
-    font-size: 2.5;
+    font-size: 3.75em;
+  }
+  .header-content-btn {
+    padding: 17px 72px 19px 70px;
+    margin-right: 20px;
+    min-width: 250px;
+    height: 60px;
+    font-size: 18px;
+    letter-spacing: 1.89px;
+  }
+  .skills-container {
+    grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+@media (max-width: 991.8px) and (min-width: 768px) {
+  .header-content-title {
+    font-size: 2.5em;
+  }
+  .header-content-btn {
+    padding: 13px 52px 16px 52px;
+    margin-right: 20px;
+    min-width: 200px;
+    height: 50px;
+    font-size: 16px;
+    letter-spacing: 1.6px;
+  }
+  .skills-container {
+    grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+@media (max-width: 767.8px) and (min-width: 576px) {
+  .header-content-title {
+    font-size: 1.875em;
+  }
+  .header-content-btn {
+    padding: 8px 37px 10px 37px;
+    margin-right: 20px;
+    min-width: 170px;
+    height: 40px;
+    font-size: 16px;
+    letter-spacing: 1.6px;
+  }
+  .skills-container {
+    grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+@media (max-width: 575.8px) {
+  .header-content-title {
+    font-size: 1.875em;
+  }
+  .header-content-buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header-content-btn {
+    padding: 8px 37px 10px 37px;
+    margin-bottom: 20px;
+    min-width: 170px;
+    height: 40px;
+    font-size: 16px;
+    letter-spacing: 1.6px;
+  }
+  .skills-container {
+    grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
   }
 }
