@@ -1,8 +1,8 @@
-@import "../../libs/normalize-scss/sass/normalize/import-now";
-@import "skin";
-@import "variables";
-@import "mixins";
-@import "mixins-media";
+@import '../../libs/normalize-scss/sass/normalize/import-now';
+@import 'skin';
+@import 'variables';
+@import 'mixins';
+@import 'mixins-media';
 // @import "extends";
 
 // @import "common";
@@ -25,873 +25,1185 @@
 /*
  * Наш код пишем здесь
  */
-* {
-  box-sizing: border-box;
+*
+{
+    box-sizing: border-box;
 }
 
-html {
-  color: $color-gray;
-  font-size: 16px;
-  letter-spacing: 0.1em;
-  font-family: $font-main;
-}
-
-a {
-  text-decoration: none;
-  color: $color-light;
-}
-
-ul {
-  color: $color-light;
-  list-style: none;
-}
-
-.header {
-  display: flex;
-  background: url(../img/img-header.png);
-  background-size: cover;
-  background-position: 50% 50%;
-  min-height: 100vh;
-  align-items: center;
-  position: relative;
-  padding: 100px 0;
-
-  @include lg-min {}
-
-  @include lg-md {}
-
-  @include md-sm {}
-
-  @include sm {}
-
-  &-overlay {
-    background-color: $color-primary;
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-  }
-
-  &-content-container,
-  &-menu-container {
-    height: 100%;
-    max-width: 1340px;
-    padding: 0 20px 0 20px;
-    margin: 0 auto;
-  }
-
-  &-menu {
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-    margin-top: 15px;
-
-    &-container {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      align-items: center;
-    }
-
-    &-logo {
-      font-size: 24px;
-      line-height: 0.83px;
-      letter-spacing: 5.52px;
-      text-align: center;
-      color: $color-light;
-
-      &-accent {
-        padding: 13px 8px 15px 6px;
-        width: 80px;
-        height: 60px;
-        border: solid 3px $color-highlight;
-        margin-right: 3px;
-        text-align: center;
-      }
-    }
-
-    &-link {
-      padding: 0 60px;
-
-      &-list {
-        display: flex;
-        justify-content: flex-end;
-        line-height: 1.11;
-        letter-spacing: 1.53px;
-        font-size: 18px;
-      }
-    }
-
-    &-item:hover {
-      color: $color-accent;
-    }
-
-    &-item {
-      display: inline-block;
-      transition: color .5s;
-      margin-left: 42px;
-    }
-  }
-
-  &-content {
-    text-align: center;
-    z-index: 1;
-    width: 100%;
-
-    &-title {
-      font-family: $font-header;
-      color: $color-light;
-      font-weight: 300;
-      line-height: 1.2em;
-      letter-spacing: 0.08em;
-
-      @include lg-min {
-        font-size: 3.75em;
-      }
-
-      @include lg-md {
-        font-size: 2.5em;
-      }
-
-      @include md-sm {
-        font-size: 1.875em;
-      }
-
-      @include sm {
-        font-size: 1.875em;
-      }
-    }
-
-    &-buttons {
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-
-      @include sm {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    &-btn {
-      // display: inline-block;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.1);
-      transition: background-color .5s;
-      line-height: 1.33;
-      border: solid 2px $color-light;
-
-      @include lg-min {
-        padding: 17px 72px 19px 70px;
-        margin-right: 20px;
-        min-width: 250px;
-        height: 60px;
-        font-size: 18px;
-        letter-spacing: 1.89px;
-      }
-
-      @include lg-md {
-        padding: 13px 52px 16px 52px;
-        margin-right: 20px;
-        min-width: 200px;
-        height: 50px;
-        font-size: 16px;
-        letter-spacing: 1.6px;
-      }
-
-      @include md-sm {
-        padding: 8px 37px 10px 37px;
-        margin-right: 20px;
-        min-width: 170px;
-        height: 40px;
-        font-size: 16px;
-        letter-spacing: 1.6px;
-      }
-
-      @include sm {
-        padding: 8px 37px 10px 37px;
-        margin-bottom: 20px;
-        min-width: 170px;
-        height: 40px;
-        font-size: 16px;
-        letter-spacing: 1.6px;
-      }
-
-
-
-      &:hover {
-        background-color: $color-accent;
-      }
-    }
-  }
-}
-
-
-
-
-.skills {
-  padding: 10px;
-
-  &-container {
-    display: grid;
-    padding-bottom: 20px;
-
-    @include lg-min {
-      grid-template-areas:
-        "a1 a1 a2 a3"
-        "a4 a5 a5 a6"
-        "a7 a8 a9 a6";
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: $gap / 2;
-    }
-
-
-    @include lg-md {
-      grid-template-areas: "a1 a1 a2"
-        "a3 a4 a4"
-        "a5 a5 a6"
-        "a7 a8 a6"
-        "a7 a9 a9";
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: $gap / 2;
-    }
-
-    @include md-sm {
-      grid-template-areas:
-        "a1 a2"
-        "a3 a2"
-        "a4 a4"
-        "a5 a6"
-        "a5 a7"
-        "a8 a9";
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: $gap / 2;
-    }
-
-    @include sm {
-      grid-template-areas:
-        "a1"
-        "a2"
-        "a3"
-        "a4"
-        "a5"
-        "a6"
-        "a7"
-        "a8"
-        "a9";
-      grid-template-columns: repeat(1, 1fr);
-      grid-gap: $gap / 2;
-    }
-  }
-
-  &-block {
-    position: relative;
-    padding: 20px;
-    min-height: calc(33.3333vh - 13.3333px);
-    overflow: hidden;
-
-    &-overlay {
-      position: absolute;
-      background-color: $color-primary;
-      opacity: 0.8;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      z-index: 1;
-      transition: opacity 0.6s;
-    }
-
-    &-title {
-      position: absolute;
-      z-index: 2;
-      margin: 0;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
-
-    &-link {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.25rem;
-      letter-spacing: 0.1em;
-      transition: color 0.5s;
-
-      &:hover {
-        color: $color-accent;
-      }
-    }
-
-    &-image {
-      position: absolute;
-      background-position: 50% 50%;
-      background-size: cover;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      transition: transform 0.6s;
-    }
-
-    &:nth-child(1) {
-      grid-area: a1;
-    }
-
-    &:nth-child(2) {
-      grid-area: a2;
-    }
-
-    &:nth-child(3) {
-      grid-area: a3;
-    }
-
-    &:nth-child(4) {
-      grid-area: a4;
-    }
-
-    &:nth-child(5) {
-      grid-area: a5;
-    }
-
-    &:nth-child(6) {
-      grid-area: a6;
-    }
-
-    &:nth-child(7) {
-      grid-area: a7;
-    }
-
-    &:nth-child(8) {
-      grid-area: a8;
-    }
-
-    &:nth-child(9) {
-      grid-area: a9;
-    }
-
-    &:hover .skills-block-image {
-      transform: scale(1.1);
-    }
-
-    &:hover .skills-block-overlay {
-      opacity: 0.9;
-    }
-  }
-
-  &-button {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0px 40px 0px;
-
-    &-link {
-      display: block;
-      padding: 19px;
-      width: 350px;
-      height: 60px;
-      border: 2px solid $color-primary;
-      background-color: rgba(45, 54, 81, 0.8);
-      text-align: center;
-
-      font-family: $font-main;
-      font-size: 18px;
-      line-height: 1.33;
-      letter-spacing: 1.8px;
-      transition: background-color .5s;
-
-      &:hover {
-        background-color: $color-accent;
-        border: 2px solid rgba(45, 54, 81, 0.8);
-      }
-
-      @include sm {
-        width: 100%;
-      }
-    }
-  }
-}
-
-.about {
-  background-color: $color-gray-light;
-
-  &-container {
-    max-width: 1340px;
-    padding: 97px 20px 86px 20px;
-    margin: auto;
-    display: grid;
-
-
-    @include lg-min {
-      grid-template-columns: 1fr 271px;
-      gap: 100px;
-    }
-
-    @include lg-md {
-      grid-template-columns: 1fr 271px;
-      gap: 40px;
-    }
-
-    @include md-sm {
-      grid-template-columns: 1fr 236px;
-      gap: 20px;
-    }
-
-    @include sm {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  &-content {
-    color: $color-gray;
-    letter-spacing: 0.055em;
-
-    @include lg-min {
-      font-size: 1.125rem;
-    }
-
-    &-title {
-
-      letter-spacing: 0.1em;
-      color: $color-primary;
-      font-family: $font-header;
-      line-height: 1.2em;
-
-
-      @include lg-min {
-        font-size: 2.5rem;
-        margin: 0 0 56px 0;
-      }
-
-      @include lg-md {
-        font-size: 2rem;
-        margin: 0 0 42px 0;
-      }
-
-      @include md-sm {
-        font-size: 1.5rem;
-        margin: 0 0 36px 0;
-      }
-
-      @include sm {
-        font-size: 1.5rem;
-        margin: 0 0 36px 0;
-        text-align: center;
-      }
-    }
-  }
-
-  &-content p:first-of-type {
-    position: relative;
-  }
-
-  &-content p:first-of-type::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 2px;
-    height: 200px;
-    background-color: rgba(99, 117, 136, 0.1);
-
-    @include lg-min {
-      right: -50px;
-    }
-
-    @include lg-md {
-      right: -20px;
-    }
-
-    @include md-sm {
-      right: -10px;
-    }
-
-    @include sm {
-      display: none;
-    }
-  }
-
-  &-image {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &-image img {
-    max-width: 100%;
-    max-height: 480px;
-  }
-}
-
-.form {
-  background-color: $color-primary;
-  min-height: 120px;
-  padding: 30px 0;
-
-  &-container {
-    max-width: 1340px;
-    margin: auto;
-    padding: 0 20px;
-    display: grid;
-
-    @include lg-min {
-      grid-template-columns: 1fr 1fr 1fr;
-      justify-content: center;
-      gap: $gap;
-    }
-
-    @include lg-md {
-      grid-template-columns: 1fr 1fr 1fr;
-      justify-content: center;
-      gap: $gap;
-    }
-
-    @include md-sm {
-      grid-template-columns: 1fr 1fr;
-      justify-content: center;
-      gap: $gap;
-    }
-
-    @include sm {
-      grid-template-rows: 1fr 1fr 1fr;
-      gap: $gap;
-    }
-
-  }
-
-  &-item {
-    @include md-sm {
-      &:nth-of-type(1) {
-        grid-column: 1 / span 2;
-      }
-    }
-
-    &-btn {
-      padding: 15px;
-      width: 100%;
-      height: 60px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-style: none;
-      border: 1px solid transparent;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-      transition: background-color .5s, border-color .5s;
-      font-family: $font-main;
-      font-size: 18px;
-      line-height: 1.33;
-      letter-spacing: 1.8px;
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        border-bottom: 2px solid rgb(255, 255, 255);
-        border-color: rgba(255, 255, 255, 0.2);
-      }
-    }
-
-    &-btn-accent {
-      width: 100%;
-      height: 60px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-style: none;
-      border: 1px solid transparent;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-      transition: background-color .5s;
-      font-family: $font-main;
-      font-size: 18px;
-      line-height: 1.33;
-      letter-spacing: 1.8px;
-      color: $color-light;
-
-      &:hover {
-        background-color: $color-accent;
-        border: 1px solid $color-light;
-      }
-    }
-  }
-}
-
-.post {
-  @include lg-min {
-    padding: 100px 0px 100px 0px;
-  }
-
-  @include lg-md {
-    padding: 80px 0px 80px 0px;
-  }
-
-  @include md-sm {
-    padding: 60px 0px 60px 0px;
-  }
-
-  @include sm {
-    padding: 60px 0px 60px 0px;
-  }
-
-  &-container {
-    max-width: 1340px;
-    margin: auto;
-    padding: 0px 20px 0 20px;
-
-
-
-    & h2 {
-      letter-spacing: 0.1em;
-      color: $color-primary;
-      font-family: $font-header;
-      line-height: 1.2em;
-
-      @include lg-min {
-        font-size: 2.5rem;
-        margin: 0px 0px 54px 0px;
-      }
-
-      @include lg-md {
-        font-size: 2rem;
-        margin: 0px 0px 58px 0px;
-      }
-
-      @include md-sm {
-        font-size: 1.5rem;
-        margin: 0px 0px 36px 0px;
-      }
-
-      @include sm {
-        font-size: 1.5rem;
-        margin: 0px 0px 36px 0px;
-        text-align: center;
-      }
-    }
-  }
-
-  &-block-wrapper {
-    display: grid;
-
-    gap: $gap;
-    padding-bottom: $gap;
-
-    @include lg-min {
-      grid-template-areas: "b1 b1 b2 b3"
-        "b4 b5 b6 b6";
-      grid-template-columns: repeat(4, 1fr);
-
-    }
-
-    @include lg-md {
-      grid-template-areas: "b1 b1 b2"
-        "b3 b4 b4"
-        "b5 b5 b6";
-      grid-template-columns: repeat(3, 1fr);
-
-    }
-
-    @include md-sm {
-      grid-template-areas: "b1 b2"
-        "b3 b4"
-        "b5 b6";
-      grid-template-columns: repeat(2, 1fr);
-
-    }
-
-    @include sm {
-      grid-template-areas: "b1"
-        "b2"
-        "b3"
-        "b4"
-        "b5"
-        "b6";
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: 1fr;
-    }
-  }
-
-  &-block {
-    background-color: #eeeeee;
-    transition: background-color .5s;
-
-    &:hover .post-block-image {
-      transform: scale(1.1);
-    }
-
-    &:hover {
-      background-color: #d8d8d8;
-    }
-
-    &:hover p {
-      color: $color-primary;
-    }
-
-    &:hover h3 {
-      color: $color-primary;
-    }
-
-    &-link {
-      display: grid;
-      height: 100%;
-      overflow: hidden;
-      grid-template-rows: 300px 1fr;
-    }
-
-    &:nth-child(1) {
-      grid-area: b1;
-    }
-
-    &:nth-child(2) {
-      grid-area: b2;
-    }
-
-    &:nth-child(3) {
-      grid-area: b3;
-    }
-
-    &:nth-child(4) {
-      grid-area: b4;
-    }
-
-    &:nth-child(5) {
-      grid-area: b5;
-    }
-
-    &:nth-child(6) {
-      grid-area: b6;
-    }
-
-    &-image {
-      display: flex;
-      overflow: hidden;
-      align-content: center;
-      justify-content: center;
-      background-color: $color-primary;
-      transition: 0.5s;
-
-      & img {
-        width: 100%;
-        object-fit: cover;
-      }
-    }
-
-    &-title {
-      display: grid;
-      align-content: center;
-      padding: 20px;
-      transition: background-color .5s;
-
-      & h3 {
-        font-family: $font-header;
-        font-size: 18px;
-        line-height: 1.11;
-        letter-spacing: 0.05em;
-        text-align: center;
-        color: $color-gray;
-      }
-
-      &-text {
-        font-size: 16px;
-        line-height: 1.25;
-        letter-spacing: normal;
-        text-align: center;
-        color: $color-gray;
-      }
-    }
-  }
-
-  &-button {
-    display: flex;
-    justify-content: center;
-
-
-
-    &-link {
-      display: block;
-      padding: 19px;
-      width: 350px;
-      height: 60px;
-      border: 2px solid $color-primary;
-      background-color: rgba(45, 54, 81, 0.8);
-      text-align: center;
-
-      font-family: $font-main;
-      font-size: 18px;
-      line-height: 1.33;
-      letter-spacing: 1.8px;
-      transition: background-color .5s;
-
-      &:hover {
-        background-color: $color-accent;
-        border: 2px solid rgba(45, 54, 81, 0.8);
-      }
-
-      @include sm {
-        width: 100%;
-      }
-    }
-  }
-}
-
-.footer {
-  max-height: 250px;
-  background-color: $color-primary;
-  padding: 50px 20px 70px;
-
-  &-container {
-    max-width: 1340px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 0 20px;
-  }
-
-  &-icon {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
-    justify-content: center;
-    // gap: 10px;
-    position: relative;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-
-    &:after {
-      content: "";
-      position: absolute;
-      width: 75px;
-      left: calc(50% - 75px / 2);
-      bottom: -7px;
-      height: 2px;
-      background-color: rgba(99, 117, 136, 0.5);
-    }
-  }
-
-  &-title p:nth-of-type(1) {
-    letter-spacing: 0.33em;
-    font-weight: 100;
-    color: $color-gray;
-  }
-
-  &-title p:nth-of-type(2) {
+html
+{
     font-family: $font-main;
-    font-weight: bold;
-    line-height: 1.25;
-    letter-spacing: 0.8px;
+    font-size: 16px;
+
+    letter-spacing: .1em;
+
+    color: $color-gray;
+}
+
+a
+{
+    text-decoration: none;
+
     color: $color-light;
-    margin-top: -12px;
-  }
 }
 
-.social a {
-  float: left;
-  border-radius: 5px;
-  transition: color .5s;
+ul
+{
+    list-style: none;
 
-  &:hover {
-    color: $color-accent;
-  }
+    color: $color-light;
 }
 
-.fa-2x {
-  font-size: 2.3em;
+.header
+{
+    position: relative;
+
+    display: flex;
+
+    min-height: 100vh;
+    padding: 100px 0;
+
+    background: url(../img/img-header.png);
+    background-position: 50% 50%;
+    background-size: cover;
+
+    align-items: center;
+
+    &-overlay
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        opacity: .8;
+        background-color: $color-primary;
+    }
+
+    &-content-container,
+    &-menu-container
+    {
+        max-width: 1340px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0 20px 0 20px;
+    }
+
+    &-menu
+    {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        padding: 20px;
+
+        @include md
+        {
+            background-color: rgba(68, 89, 110, .25);
+        }
+
+        &-container
+        {
+            display: grid;
+
+            grid-template-columns: auto 1fr;
+            align-items: center;
+        }
+
+        &-logo
+        {
+            font-size: 24px;
+            line-height: .83px;
+
+            text-align: center;
+            letter-spacing: 5.52px;
+
+            color: $color-light;
+
+            &-accent
+            {
+                width: 80px;
+                height: 60px;
+                margin-right: 3px;
+                padding: 13px 8px 15px 6px;
+
+                text-align: center;
+
+                border: solid 3px $color-highlight;
+            }
+        }
+
+        &-link
+        {
+            position: relative;
+
+            display: grid;
+
+            letter-spacing: .1em;
+
+            align-items: center;
+            justify-items: end;
+
+            &-btn
+            {
+                position: relative;
+
+                width: 30px;
+                height: 22.5px;
+                margin: 25px;
+
+                cursor: pointer;
+                transition: .5s ease-in-out;
+                transform: rotate(0deg);
+
+                @include md-min
+                {
+                    display: none;
+                }
+                @include md
+                {
+                    display: block;
+                }
+
+                &-row
+                {
+                    position: absolute;
+                    left: 0;
+
+                    display: block;
+
+                    width: 100%;
+                    height: 3px;
+
+                    transition: .25s ease-in-out;
+                    transform: rotate(0deg);
+
+                    opacity: 1;
+                    border-radius: 9px;
+                    background: $color-light;
+
+                    &:nth-child(1)
+                    {
+                        top: 0;
+                    }
+
+                    &:nth-child(2)
+                    {
+                        top: 9px;
+                    }
+
+                    &:nth-child(3)
+                    {
+                        top: 18px;
+                    }
+                }
+
+                &.open span:nth-child(1)
+                {
+                    top: 9px;
+
+                    transform: rotate(135deg);
+                }
+
+                &.open span:nth-child(2)
+                {
+                    left: -30px;
+
+                    opacity: 0;
+                }
+
+                &.open span:nth-child(3)
+                {
+                    top: 9px;
+
+                    transform: rotate(-135deg);
+                }
+            }
+
+            &-list
+            {
+                font-size: 18px;
+                line-height: 1.11;
+
+                letter-spacing: 1.53px;
+
+                @include md-min
+                {
+                    display: grid;
+
+                    width: 100%;
+
+                    justify-content: end;
+                    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+                }
+                @include md
+                {
+                    font-size: 16px;
+                    line-height: 3;
+
+                    position: absolute;
+                    top: 100%;
+
+                    display: none;
+
+                    padding: 10px;
+
+                    text-align: right;
+                    letter-spacing: 1.53px;
+
+                    background-color: rgba(68, 89, 110, .9);
+                }
+            }
+        }
+
+        &-item:hover
+        {
+            color: $color-accent;
+        }
+
+        &-item
+        {
+            display: inline-block;
+
+            margin-left: 42px;
+
+            transition: color .5s;
+        }
+    }
+
+
+    &-content
+    {
+        z-index: 1;
+
+        width: 100%;
+
+        text-align: center;
+
+        &-title
+        {
+            font-family: $font-header;
+            font-weight: 300;
+            line-height: 1.2em;
+
+            letter-spacing: .08em;
+
+            color: $color-light;
+
+            @include lg-min
+            {
+                font-size: 3.75em;
+            }
+            @include lg-md
+            {
+                font-size: 2.5em;
+            }
+            @include md-sm
+            {
+                font-size: 1.875em;
+            }
+            @include sm
+            {
+                font-size: 1.875em;
+            }
+        }
+
+        &-buttons
+        {
+            z-index: 1;
+
+            display: flex;
+
+            justify-content: center;
+            @include sm
+            {
+                flex-direction: column;
+
+                align-items: center;
+            }
+        }
+
+        &-btn
+        {
+            line-height: 1.33;
+
+            transition: background-color .5s;
+            text-align: center;
+
+            border: solid 2px $color-light;
+            background-color: rgba(255, 255, 255, .1);
+
+            @include lg-min
+            {
+                font-size: 18px;
+
+                min-width: 250px;
+                height: 60px;
+                margin-right: 20px;
+                padding: 17px 72px 19px 70px;
+
+                letter-spacing: 1.89px;
+            }
+            @include lg-md
+            {
+                font-size: 16px;
+
+                min-width: 200px;
+                height: 50px;
+                margin-right: 20px;
+                padding: 13px 52px 16px 52px;
+
+                letter-spacing: 1.6px;
+            }
+            @include md-sm
+            {
+                font-size: 16px;
+
+                min-width: 170px;
+                height: 40px;
+                margin-right: 20px;
+                padding: 8px 37px 10px 37px;
+
+                letter-spacing: 1.6px;
+            }
+            @include sm
+            {
+                font-size: 16px;
+
+                min-width: 170px;
+                height: 40px;
+                margin-bottom: 20px;
+                padding: 8px 37px 10px 37px;
+
+                letter-spacing: 1.6px;
+            }
+
+
+
+            &:hover
+            {
+                background-color: $color-accent;
+            }
+        }
+    }
+}
+
+
+
+
+.skills
+{
+    padding: 10px;
+
+    &-container
+    {
+        display: grid;
+
+        padding-bottom: 20px;
+
+        @include lg-min
+        {
+            grid-template-areas: 'a1 a1 a2 a3'
+            'a4 a5 a5 a6'
+            'a7 a8 a9 a6';
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: $gap / 2;
+        }
+        @include lg-md
+        {
+            grid-template-areas: 'a1 a1 a2'
+            'a3 a4 a4'
+            'a5 a5 a6'
+            'a7 a8 a6'
+            'a7 a9 a9';
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: $gap / 2;
+        }
+        @include md-sm
+        {
+            grid-template-areas: 'a1 a2'
+            'a3 a2'
+            'a4 a4'
+            'a5 a6'
+            'a5 a7'
+            'a8 a9';
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: $gap / 2;
+        }
+        @include sm
+        {
+            grid-template-areas: 'a1'
+            'a2'
+            'a3'
+            'a4'
+            'a5'
+            'a6'
+            'a7'
+            'a8'
+            'a9';
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: $gap / 2;
+        }
+    }
+
+    &-block
+    {
+        position: relative;
+
+        overflow: hidden;
+
+        min-height: calc(33.3333vh - 13.3333px);
+        padding: 20px;
+
+        &-overlay
+        {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            transition: opacity .6s;
+
+            opacity: .8;
+            background-color: $color-primary;
+        }
+
+        &-title
+        {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            margin: 0;
+        }
+
+        &-link
+        {
+            font-size: 1.25rem;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            display: flex;
+
+            transition: color .5s;
+            letter-spacing: .1em;
+
+            justify-content: center;
+            align-items: center;
+
+            &:hover
+            {
+                color: $color-accent;
+            }
+        }
+
+        &-image
+        {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            transition: transform .6s;
+
+            background-position: 50% 50%;
+            background-size: cover;
+        }
+
+        &:nth-child(1)
+        {
+            grid-area: a1;
+        }
+
+        &:nth-child(2)
+        {
+            grid-area: a2;
+        }
+
+        &:nth-child(3)
+        {
+            grid-area: a3;
+        }
+
+        &:nth-child(4)
+        {
+            grid-area: a4;
+        }
+
+        &:nth-child(5)
+        {
+            grid-area: a5;
+        }
+
+        &:nth-child(6)
+        {
+            grid-area: a6;
+        }
+
+        &:nth-child(7)
+        {
+            grid-area: a7;
+        }
+
+        &:nth-child(8)
+        {
+            grid-area: a8;
+        }
+
+        &:nth-child(9)
+        {
+            grid-area: a9;
+        }
+
+        &:hover .skills-block-image
+        {
+            transform: scale(1.1);
+        }
+
+        &:hover .skills-block-overlay
+        {
+            opacity: .9;
+        }
+    }
+
+    &-button
+    {
+        display: flex;
+
+        margin: 20px 0 40px 0;
+
+        justify-content: center;
+
+        &-link
+        {
+            font-family: $font-main;
+            font-size: 18px;
+            line-height: 1.33;
+
+            display: block;
+
+            width: 350px;
+            height: 60px;
+            padding: 19px;
+
+            transition: background-color .5s;
+            text-align: center;
+            letter-spacing: 1.8px;
+
+            border: 2px solid $color-primary;
+            background-color: rgba(45, 54, 81, .8);
+
+            @include sm
+            {
+                width: 100%;
+            }
+
+            &:hover
+            {
+                border: 2px solid rgba(45, 54, 81, .8);
+                background-color: $color-accent;
+            }
+        }
+    }
+}
+
+.about
+{
+    background-color: $color-gray-light;
+
+    &-container
+    {
+        display: grid;
+
+        max-width: 1340px;
+        margin: auto;
+        padding: 97px 20px 86px 20px;
+
+        @include lg-min
+        {
+            grid-template-columns: 1fr 271px;
+            gap: 100px;
+        }
+        @include lg-md
+        {
+            grid-template-columns: 1fr 271px;
+            gap: 40px;
+        }
+        @include md-sm
+        {
+            grid-template-columns: 1fr 236px;
+            gap: 20px;
+        }
+        @include sm
+        {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-content
+    {
+        letter-spacing: .055em;
+
+        color: $color-gray;
+
+        @include lg-min
+        {
+            font-size: 1.125rem;
+        }
+
+        &-title
+        {
+            font-family: $font-header;
+            line-height: 1.2em;
+
+            letter-spacing: .1em;
+
+            color: $color-primary;
+
+            @include lg-min
+            {
+                font-size: 2.5rem;
+
+                margin: 0 0 56px 0;
+            }
+            @include lg-md
+            {
+                font-size: 2rem;
+
+                margin: 0 0 42px 0;
+            }
+            @include md-sm
+            {
+                font-size: 1.5rem;
+
+                margin: 0 0 36px 0;
+            }
+            @include sm
+            {
+                font-size: 1.5rem;
+
+                margin: 0 0 36px 0;
+
+                text-align: center;
+            }
+        }
+    }
+
+    &-content p:first-of-type
+    {
+        position: relative;
+    }
+
+    &-content p:first-of-type::after
+    {
+        position: absolute;
+        top: 0;
+
+        width: 2px;
+        height: 200px;
+
+        content: '';
+
+        background-color: rgba(99, 117, 136, .1);
+
+        @include lg-min
+        {
+            right: -50px;
+        }
+        @include lg-md
+        {
+            right: -20px;
+        }
+        @include md-sm
+        {
+            right: -10px;
+        }
+        @include sm
+        {
+            display: none;
+        }
+    }
+
+    &-image
+    {
+        display: grid;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-image img
+    {
+        max-width: 100%;
+        max-height: 480px;
+    }
+}
+
+.form
+{
+    min-height: 120px;
+    padding: 30px 0;
+
+    background-color: $color-primary;
+
+    &-container
+    {
+        display: grid;
+
+        max-width: 1340px;
+        margin: auto;
+        padding: 0 20px;
+
+        @include lg-min
+        {
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: center;
+            gap: $gap;
+        }
+        @include lg-md
+        {
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: center;
+            gap: $gap;
+        }
+        @include md-sm
+        {
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            gap: $gap;
+        }
+        @include sm
+        {
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: $gap;
+        }
+    }
+
+    &-item
+    {
+        @include md-sm
+        {
+            &:nth-of-type(1)
+            {
+                grid-column: 1 / span 2;
+            }
+        }
+
+        &-btn
+        {
+            font-family: $font-main;
+            font-size: 18px;
+            line-height: 1.33;
+
+            width: 100%;
+            height: 60px;
+            padding: 15px;
+
+            transition: background-color .5s, border-color .5s;
+            letter-spacing: 1.8px;
+
+            border: 1px solid transparent;
+            border-style: none;
+            border-bottom: 2px solid rgba(255, 255, 255, .2);
+            background-color: rgba(255, 255, 255, .1);
+
+            &:hover
+            {
+                border-color: rgba(255, 255, 255, .2);
+                border-bottom: 2px solid rgb(255, 255, 255);
+                background-color: rgba(255, 255, 255, .2);
+            }
+        }
+
+        &-btn-accent
+        {
+            font-family: $font-main;
+            font-size: 18px;
+            line-height: 1.33;
+
+            width: 100%;
+            height: 60px;
+
+            transition: background-color .5s;
+            letter-spacing: 1.8px;
+
+            color: $color-light;
+            border: 1px solid transparent;
+            border-style: none;
+            border-bottom: 2px solid rgba(255, 255, 255, .2);
+            background-color: rgba(255, 255, 255, .1);
+
+            &:hover
+            {
+                border: 1px solid $color-light;
+                background-color: $color-accent;
+            }
+        }
+    }
+}
+
+.post
+{
+    @include lg-min
+    {
+        padding: 100px 0 100px 0;
+    }
+    @include lg-md
+    {
+        padding: 80px 0 80px 0;
+    }
+    @include md-sm
+    {
+        padding: 60px 0 60px 0;
+    }
+    @include sm
+    {
+        padding: 60px 0 60px 0;
+    }
+
+    &-container
+    {
+        max-width: 1340px;
+        margin: auto;
+        padding: 0 20px 0 20px;
+
+
+
+        & h2
+        {
+            font-family: $font-header;
+            line-height: 1.2em;
+
+            letter-spacing: .1em;
+
+            color: $color-primary;
+
+            @include lg-min
+            {
+                font-size: 2.5rem;
+
+                margin: 0 0 54px 0;
+            }
+            @include lg-md
+            {
+                font-size: 2rem;
+
+                margin: 0 0 58px 0;
+            }
+            @include md-sm
+            {
+                font-size: 1.5rem;
+
+                margin: 0 0 36px 0;
+            }
+            @include sm
+            {
+                font-size: 1.5rem;
+
+                margin: 0 0 36px 0;
+
+                text-align: center;
+            }
+        }
+    }
+
+    &-block-wrapper
+    {
+        display: grid;
+
+        padding-bottom: $gap;
+
+        gap: $gap;
+        @include lg-min
+        {
+            grid-template-areas: 'b1 b1 b2 b3'
+            'b4 b5 b6 b6';
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @include lg-md
+        {
+            grid-template-areas: 'b1 b1 b2'
+            'b3 b4 b4'
+            'b5 b5 b6';
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include md-sm
+        {
+            grid-template-areas: 'b1 b2'
+            'b3 b4'
+            'b5 b6';
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include sm
+        {
+            grid-template-areas: 'b1'
+            'b2'
+            'b3'
+            'b4'
+            'b5'
+            'b6';
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: 1fr;
+        }
+    }
+
+    &-block
+    {
+        transition: background-color .5s;
+
+        background-color: #eee;
+
+        &:hover .post-block-image
+        {
+            transform: scale(1.1);
+        }
+
+        &:hover
+        {
+            background-color: #d8d8d8;
+        }
+
+        &:hover p
+        {
+            color: $color-primary;
+        }
+
+        &:hover h3
+        {
+            color: $color-primary;
+        }
+
+        &-link
+        {
+            display: grid;
+            overflow: hidden;
+
+            height: 100%;
+
+            grid-template-rows: 300px 1fr;
+        }
+
+        &:nth-child(1)
+        {
+            grid-area: b1;
+        }
+
+        &:nth-child(2)
+        {
+            grid-area: b2;
+        }
+
+        &:nth-child(3)
+        {
+            grid-area: b3;
+        }
+
+        &:nth-child(4)
+        {
+            grid-area: b4;
+        }
+
+        &:nth-child(5)
+        {
+            grid-area: b5;
+        }
+
+        &:nth-child(6)
+        {
+            grid-area: b6;
+        }
+
+        &-image
+        {
+            display: flex;
+            overflow: hidden;
+
+            transition: .5s;
+
+            background-color: $color-primary;
+
+            align-content: center;
+            justify-content: center;
+
+            & img
+            {
+                width: 100%;
+
+                object-fit: cover;
+            }
+        }
+
+        &-title
+        {
+            display: grid;
+
+            padding: 20px;
+
+            transition: background-color .5s;
+
+            align-content: center;
+
+            & h3
+            {
+                font-family: $font-header;
+                font-size: 18px;
+                line-height: 1.11;
+
+                text-align: center;
+                letter-spacing: .05em;
+
+                color: $color-gray;
+            }
+
+            &-text
+            {
+                font-size: 16px;
+                line-height: 1.25;
+
+                text-align: center;
+                letter-spacing: normal;
+
+                color: $color-gray;
+            }
+        }
+    }
+
+    &-button
+    {
+        display: flex;
+
+        justify-content: center;
+
+
+
+        &-link
+        {
+            font-family: $font-main;
+            font-size: 18px;
+            line-height: 1.33;
+
+            display: block;
+
+            width: 350px;
+            height: 60px;
+            padding: 19px;
+
+            transition: background-color .5s;
+            text-align: center;
+            letter-spacing: 1.8px;
+
+            border: 2px solid $color-primary;
+            background-color: rgba(45, 54, 81, .8);
+
+            @include sm
+            {
+                width: 100%;
+            }
+
+            &:hover
+            {
+                border: 2px solid rgba(45, 54, 81, .8);
+                background-color: $color-accent;
+            }
+        }
+    }
+}
+
+.footer
+{
+    max-height: 250px;
+    padding: 50px 20px 70px;
+
+    background-color: $color-primary;
+
+    &-container
+    {
+        max-width: 1340px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        text-align: center;
+    }
+
+    &-icon
+    {
+        // gap: 10px;
+        position: relative;
+
+        display: grid;
+
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+
+        grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+        justify-content: center;
+
+        &:after
+        {
+            position: absolute;
+            bottom: -7px;
+            left: calc(50% - 75px / 2);
+
+            width: 75px;
+            height: 2px;
+
+            content: '';
+
+            background-color: rgba(99, 117, 136, .5);
+        }
+    }
+
+    &-title p:nth-of-type(1)
+    {
+        font-weight: 100;
+
+        letter-spacing: .33em;
+
+        color: $color-gray;
+    }
+
+    &-title p:nth-of-type(2)
+    {
+        font-family: $font-main;
+        font-weight: bold;
+        line-height: 1.25;
+
+        margin-top: -12px;
+
+        letter-spacing: .8px;
+
+        color: $color-light;
+    }
+}
+
+.social a
+{
+    float: left;
+
+    transition: color .5s;
+
+    border-radius: 5px;
+
+    &:hover
+    {
+        color: $color-accent;
+    }
+}
+
+.fa-2x
+{
+    font-size: 2.3em;
 }
