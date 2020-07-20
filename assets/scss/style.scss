@@ -25,13 +25,11 @@
 /*
  * Наш код пишем здесь
  */
-*
-{
+* {
     box-sizing: border-box;
 }
 
-html
-{
+html {
     font-family: $font-main;
     font-size: 16px;
 
@@ -40,22 +38,19 @@ html
     color: $color-gray;
 }
 
-a
-{
+a {
     text-decoration: none;
 
     color: $color-light;
 }
 
-ul
-{
+ul {
     list-style: none;
 
     color: $color-light;
 }
 
-.header
-{
+.header {
     position: relative;
 
     display: flex;
@@ -69,8 +64,7 @@ ul
 
     align-items: center;
 
-    &-overlay
-    {
+    &-overlay {
         position: absolute;
         top: 0;
         right: 0;
@@ -82,39 +76,34 @@ ul
     }
 
     &-content-container,
-    &-menu-container
-    {
+    &-menu-container {
         max-width: 1340px;
         height: 100%;
         margin: 0 auto;
-        padding: 0 20px 0 20px;
+        padding: 3px 20px 0 20px;
     }
 
-    &-menu
-    {
+    &-menu {
         position: absolute;
         z-index: 1;
         top: 0;
         left: 0;
 
         width: 100%;
-        padding: 20px;
+        // padding: 20px;
 
-        @include md
-        {
+        @include md {
             background-color: rgba(68, 89, 110, .25);
         }
 
-        &-container
-        {
+        &-container {
             display: grid;
 
             grid-template-columns: auto 1fr;
             align-items: center;
         }
 
-        &-logo
-        {
+        &-logo {
             font-size: 24px;
             line-height: .83px;
 
@@ -123,12 +112,11 @@ ul
 
             color: $color-light;
 
-            &-accent
-            {
+            &-accent {
                 width: 80px;
                 height: 60px;
                 margin-right: 3px;
-                padding: 13px 8px 15px 6px;
+                padding: 14px 1px 13px 5px;
 
                 text-align: center;
 
@@ -136,8 +124,7 @@ ul
             }
         }
 
-        &-link
-        {
+        &-link {
             position: relative;
 
             display: grid;
@@ -147,8 +134,7 @@ ul
             align-items: center;
             justify-items: end;
 
-            &-btn
-            {
+            &-btn {
                 position: relative;
 
                 width: 30px;
@@ -159,17 +145,15 @@ ul
                 transition: .5s ease-in-out;
                 transform: rotate(0deg);
 
-                @include md-min
-                {
+                @include md-min {
                     display: none;
                 }
-                @include md
-                {
+
+                @include md {
                     display: block;
                 }
 
-                &-row
-                {
+                &-row {
                     position: absolute;
                     left: 0;
 
@@ -185,54 +169,46 @@ ul
                     border-radius: 9px;
                     background: $color-light;
 
-                    &:nth-child(1)
-                    {
+                    &:nth-child(1) {
                         top: 0;
                     }
 
-                    &:nth-child(2)
-                    {
+                    &:nth-child(2) {
                         top: 9px;
                     }
 
-                    &:nth-child(3)
-                    {
+                    &:nth-child(3) {
                         top: 18px;
                     }
                 }
 
-                &.open span:nth-child(1)
-                {
+                &.open span:nth-child(1) {
                     top: 9px;
 
                     transform: rotate(135deg);
                 }
 
-                &.open span:nth-child(2)
-                {
+                &.open span:nth-child(2) {
                     left: -30px;
 
                     opacity: 0;
                 }
 
-                &.open span:nth-child(3)
-                {
+                &.open span:nth-child(3) {
                     top: 9px;
 
                     transform: rotate(-135deg);
                 }
             }
 
-            &-list
-            {
+            &-list {
                 font-size: 18px;
                 line-height: 1.11;
-                padding: 0;
+                margin-right: -20px;
 
                 letter-spacing: 1.53px;
 
-                @include md-min
-                {
+                @include md-min {
                     display: grid;
 
                     width: 100%;
@@ -240,8 +216,8 @@ ul
                     justify-content: end;
                     grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
                 }
-                @include md
-                {
+
+                @include md {
                     position: absolute;
                     top: 100%;
 
@@ -254,8 +230,7 @@ ul
             }
         }
 
-        &-item
-        {
+        &-item {
             display: inline-block;
 
             padding: $gap;
@@ -263,65 +238,61 @@ ul
             transition: color .5s;
 
             &:hover {
-              color: $color-accent;
+                color: $color-accent;
             }
         }
     }
 
 
-    &-content
-    {
+    &-content {
         z-index: 1;
 
         width: 100%;
 
         text-align: center;
 
-        &-title
-        {
+        &-title {
             font-family: $font-header;
             font-weight: 300;
             line-height: 1.2em;
+            margin: -11px 0 50px 0px;
 
             letter-spacing: .08em;
 
             color: $color-light;
 
-            @include lg-min
-            {
+            @include lg-min {
                 font-size: 3.75em;
             }
-            @include lg-md
-            {
+
+            @include lg-md {
                 font-size: 2.5em;
             }
-            @include md-sm
-            {
+
+            @include md-sm {
                 font-size: 1.875em;
             }
-            @include sm
-            {
+
+            @include sm {
                 font-size: 1.875em;
             }
         }
 
-        &-buttons
-        {
+        &-buttons {
             z-index: 1;
 
             display: flex;
 
             justify-content: center;
-            @include sm
-            {
+
+            @include sm {
                 flex-direction: column;
 
                 align-items: center;
             }
         }
 
-        &-btn
-        {
+        &-btn {
             line-height: 1.33;
 
             transition: background-color .5s;
@@ -330,8 +301,7 @@ ul
             border: solid 2px $color-light;
             background-color: rgba(255, 255, 255, .1);
 
-            @include lg-min
-            {
+            @include lg-min {
                 font-size: 18px;
 
                 min-width: 250px;
@@ -341,8 +311,8 @@ ul
 
                 letter-spacing: 1.89px;
             }
-            @include lg-md
-            {
+
+            @include lg-md {
                 font-size: 16px;
 
                 min-width: 200px;
@@ -352,8 +322,8 @@ ul
 
                 letter-spacing: 1.6px;
             }
-            @include md-sm
-            {
+
+            @include md-sm {
                 font-size: 16px;
 
                 min-width: 170px;
@@ -363,8 +333,8 @@ ul
 
                 letter-spacing: 1.6px;
             }
-            @include sm
-            {
+
+            @include sm {
                 font-size: 16px;
 
                 min-width: 170px;
@@ -377,8 +347,7 @@ ul
 
 
 
-            &:hover
-            {
+            &:hover {
                 background-color: $color-accent;
             }
         }
@@ -388,63 +357,59 @@ ul
 
 
 
-.skills
-{
+.skills {
     padding: 10px;
 
-    &-container
-    {
+    &-container {
         display: grid;
 
         padding-bottom: 20px;
 
-        @include lg-min
-        {
+        @include lg-min {
             grid-template-areas: 'a1 a1 a2 a3'
-            'a4 a5 a5 a6'
-            'a7 a8 a9 a6';
+                'a4 a5 a5 a6'
+                'a7 a8 a9 a6';
             grid-template-columns: repeat(4, 1fr);
             grid-gap: $gap / 2;
         }
-        @include lg-md
-        {
+
+        @include lg-md {
             grid-template-areas: 'a1 a1 a2'
-            'a3 a4 a4'
-            'a5 a5 a6'
-            'a7 a8 a6'
-            'a7 a9 a9';
+                'a3 a4 a4'
+                'a5 a5 a6'
+                'a7 a8 a6'
+                'a7 a9 a9';
             grid-template-columns: repeat(3, 1fr);
             grid-gap: $gap / 2;
         }
-        @include md-sm
-        {
+
+        @include md-sm {
             grid-template-areas: 'a1 a2'
-            'a3 a2'
-            'a4 a4'
-            'a5 a6'
-            'a5 a7'
-            'a8 a9';
+                'a3 a2'
+                'a4 a4'
+                'a5 a6'
+                'a5 a7'
+                'a8 a9';
             grid-template-columns: repeat(2, 1fr);
             grid-gap: $gap / 2;
         }
-        @include sm
-        {
+
+        @include sm {
             grid-template-areas: 'a1'
-            'a2'
-            'a3'
-            'a4'
-            'a5'
-            'a6'
-            'a7'
-            'a8'
-            'a9';
+                'a2'
+                'a3'
+                'a4'
+                'a5'
+                'a6'
+                'a7'
+                'a8'
+                'a9';
             grid-template-columns: repeat(1, 1fr);
             grid-gap: $gap / 2;
         }
     }
 
-    &-block
-    {
+    &-block {
         position: relative;
 
         overflow: hidden;
@@ -452,8 +417,7 @@ ul
         min-height: calc(33.3333vh - 13.3333px);
         padding: 20px;
 
-        &-overlay
-        {
+        &-overlay {
             position: absolute;
             z-index: 1;
             top: 0;
@@ -467,8 +431,7 @@ ul
             background-color: $color-primary;
         }
 
-        &-title
-        {
+        &-title {
             position: absolute;
             z-index: 2;
             top: 0;
@@ -479,8 +442,7 @@ ul
             margin: 0;
         }
 
-        &-link
-        {
+        &-link {
             font-size: 1.25rem;
 
             position: absolute;
@@ -497,14 +459,12 @@ ul
             justify-content: center;
             align-items: center;
 
-            &:hover
-            {
+            &:hover {
                 color: $color-accent;
             }
         }
 
-        &-image
-        {
+        &-image {
             position: absolute;
             top: 0;
             right: 0;
@@ -517,72 +477,59 @@ ul
             background-size: cover;
         }
 
-        &:nth-child(1)
-        {
+        &:nth-child(1) {
             grid-area: a1;
         }
 
-        &:nth-child(2)
-        {
+        &:nth-child(2) {
             grid-area: a2;
         }
 
-        &:nth-child(3)
-        {
+        &:nth-child(3) {
             grid-area: a3;
         }
 
-        &:nth-child(4)
-        {
+        &:nth-child(4) {
             grid-area: a4;
         }
 
-        &:nth-child(5)
-        {
+        &:nth-child(5) {
             grid-area: a5;
         }
 
-        &:nth-child(6)
-        {
+        &:nth-child(6) {
             grid-area: a6;
         }
 
-        &:nth-child(7)
-        {
+        &:nth-child(7) {
             grid-area: a7;
         }
 
-        &:nth-child(8)
-        {
+        &:nth-child(8) {
             grid-area: a8;
         }
 
-        &:nth-child(9)
-        {
+        &:nth-child(9) {
             grid-area: a9;
         }
 
-        &:hover .skills-block-image
-        {
+        &:hover .skills-block-image {
             transform: scale(1.1);
         }
 
-        &:hover .skills-block-overlay
-        {
+        &:hover .skills-block-overlay {
             opacity: .9;
         }
     }
 
-    &-button
-    {
+    &-button {
         display: flex;
 
-        margin: 20px 0 40px 0;
+        margin: 0 0 40px 0;
 
         justify-content: center;
 
-        &-link
-        {
+        &-link {
             font-family: $font-main;
             font-size: 18px;
             line-height: 1.33;
@@ -600,13 +547,11 @@ ul
             border: 2px solid $color-primary;
             background-color: rgba(45, 54, 81, .8);
 
-            @include sm
-            {
+            @include sm {
                 width: 100%;
             }
 
-            &:hover
-            {
+            &:hover {
                 border: 2px solid rgba(45, 54, 81, .8);
                 background-color: $color-accent;
             }
@@ -614,52 +559,46 @@ ul
     }
 }
 
-.about
-{
+.about {
     background-color: $color-gray-light;
 
-    &-container
-    {
+    &-container {
         display: grid;
 
         max-width: 1340px;
         margin: auto;
         padding: 97px 20px 86px 20px;
 
-        @include lg-min
-        {
+        @include lg-min {
             grid-template-columns: 1fr 271px;
             gap: 100px;
         }
-        @include lg-md
-        {
+
+        @include lg-md {
             grid-template-columns: 1fr 271px;
             gap: 40px;
         }
-        @include md-sm
-        {
+
+        @include md-sm {
             grid-template-columns: 1fr 236px;
             gap: 20px;
         }
-        @include sm
-        {
+
+        @include sm {
             grid-template-columns: 1fr;
         }
     }
 
-    &-content
-    {
+    &-content {
         letter-spacing: .055em;
 
         color: $color-gray;
 
-        @include lg-min
-        {
+        @include lg-min {
             font-size: 1.125rem;
         }
 
-        &-title
-        {
+        &-title {
             font-family: $font-header;
             line-height: 1.2em;
 
@@ -667,26 +606,25 @@ ul
 
             color: $color-primary;
 
-            @include lg-min
-            {
+            @include lg-min {
                 font-size: 2.5rem;
 
                 margin: 0 0 56px 0;
             }
-            @include lg-md
-            {
+
+            @include lg-md {
                 font-size: 2rem;
 
                 margin: 0 0 42px 0;
             }
-            @include md-sm
-            {
+
+            @include md-sm {
                 font-size: 1.5rem;
 
                 margin: 0 0 36px 0;
             }
-            @include sm
-            {
+
+            @include sm {
                 font-size: 1.5rem;
 
                 margin: 0 0 36px 0;
@@ -696,13 +634,11 @@ ul
         }
     }
 
-    &-content p:first-of-type
-    {
+    &-content p:first-of-type {
         position: relative;
     }
 
-    &-content p:first-of-type::after
-    {
+    &-content p:first-of-type::after {
         position: absolute;
         top: 0;
 
@@ -713,117 +649,122 @@ ul
 
         background-color: rgba(99, 117, 136, .1);
 
-        @include lg-min
-        {
+        @include lg-min {
             right: -50px;
         }
-        @include lg-md
-        {
+
+        @include lg-md {
             right: -20px;
         }
-        @include md-sm
-        {
+
+        @include md-sm {
             right: -10px;
         }
-        @include sm
-        {
+
+        @include sm {
             display: none;
         }
     }
 
-    &-image
-    {
+    &-image {
         display: grid;
 
         justify-content: center;
         align-items: center;
     }
 
-    &-image img
-    {
+    &-image img {
         max-width: 100%;
         max-height: 480px;
     }
 }
 
-.form
-{
+.form {
     min-height: 120px;
     padding: 30px 0;
 
     background-color: $color-primary;
 
-    &-container
-    {
+    &-container {
         display: grid;
 
         max-width: 1340px;
         margin: auto;
         padding: 0 20px;
 
-        @include lg-min
-        {
+        @include lg-min {
             grid-template-columns: 1fr 1fr 1fr;
             justify-content: center;
             gap: $gap;
         }
-        @include lg-md
-        {
+
+        @include lg-md {
             grid-template-columns: 1fr 1fr 1fr;
             justify-content: center;
             gap: $gap;
         }
-        @include md-sm
-        {
+
+        @include md-sm {
             grid-template-columns: 1fr 1fr;
             justify-content: center;
             gap: $gap;
         }
-        @include sm
-        {
+
+        @include sm {
             grid-template-rows: 1fr 1fr 1fr;
             gap: $gap;
         }
     }
 
-    &-item
-    {
-        @include md-sm
-        {
-            &:nth-of-type(1)
-            {
+    &-item {
+        @include md-sm {
+            &:nth-of-type(1) {
                 grid-column: 1 / span 2;
             }
         }
 
-        &-btn
-        {
+        &-btn {
             font-family: $font-main;
-            font-size: 18px;
+            font-size: 1.125em;
             line-height: 1.33;
 
+            display: block;
             width: 100%;
             height: 60px;
-            padding: 15px;
+            padding: 0 30px 0 30px;
 
             transition: background-color .5s, border-color .5s;
             letter-spacing: 1.8px;
 
-            border: 1px solid transparent;
-            border-style: none;
-            border-bottom: 2px solid rgba(255, 255, 255, .2);
-            background-color: rgba(255, 255, 255, .1);
+            border: 2px solid rgba(255, 255, 255, 0);
+            border-bottom-color: rgba(255, 255, 255, 0.25);
+            background-color: rgba(255, 255, 255, 0.05);
+            color: $color-light;
 
-            &:hover
-            {
-                border-color: rgba(255, 255, 255, .2);
-                border-bottom: 2px solid rgb(255, 255, 255);
-                background-color: rgba(255, 255, 255, .2);
+            &::-webkit-input-placeholder {
+                color: $color-gray;
+                transition: color .5s;
+            }
+
+            &:hover {
+                border-color: rgba(255, 255, 255, 0.15);
+                border-bottom-color: #ffffff;
+                background-color: rgba(255, 255, 255, 0.15);
+
+                &::-webkit-input-placeholder {
+                    color: #7893b3;
+                }
+            }
+
+            &:focus {
+                outline: none;
+                border-color: rgba(255, 255, 255, 0.15);
+                border-bottom-color: #ffffff;
+                background-color: rgba(255, 255, 255, 0.15);
             }
         }
 
-        &-btn-accent
-        {
+        &-btn-accent {
             font-family: $font-main;
             font-size: 18px;
             line-height: 1.33;
@@ -836,12 +777,10 @@ ul
 
             color: $color-light;
             border: 1px solid transparent;
-            border-style: none;
             border-bottom: 2px solid rgba(255, 255, 255, .2);
             background-color: rgba(255, 255, 255, .1);
 
-            &:hover
-            {
+            &:hover {
                 border: 1px solid $color-light;
                 background-color: $color-accent;
             }
@@ -849,35 +788,31 @@ ul
     }
 }
 
-.post
-{
-    @include lg-min
-    {
+.post {
+    @include lg-min {
         padding: 100px 0 100px 0;
     }
-    @include lg-md
-    {
+
+    @include lg-md {
         padding: 80px 0 80px 0;
     }
-    @include md-sm
-    {
-        padding: 60px 0 60px 0;
-    }
-    @include sm
-    {
+
+    @include md-sm {
         padding: 60px 0 60px 0;
     }
 
-    &-container
-    {
+    @include sm {
+        padding: 60px 0 60px 0;
+    }
+
+    &-container {
         max-width: 1340px;
         margin: auto;
         padding: 0 20px 0 20px;
 
 
 
-        & h2
-        {
+        & h2 {
             font-family: $font-header;
             line-height: 1.2em;
 
@@ -885,26 +820,25 @@ ul
 
             color: $color-primary;
 
-            @include lg-min
-            {
+            @include lg-min {
                 font-size: 2.5rem;
 
                 margin: 0 0 54px 0;
             }
-            @include lg-md
-            {
+
+            @include lg-md {
                 font-size: 2rem;
 
                 margin: 0 0 58px 0;
             }
-            @include md-sm
-            {
+
+            @include md-sm {
                 font-size: 1.5rem;
 
                 margin: 0 0 36px 0;
             }
-            @include sm
-            {
+
+            @include sm {
                 font-size: 1.5rem;
 
                 margin: 0 0 36px 0;
@@ -914,74 +848,67 @@ ul
         }
     }
 
-    &-block-wrapper
-    {
+    &-block-wrapper {
         display: grid;
 
         padding-bottom: $gap;
 
         gap: $gap;
-        @include lg-min
-        {
+
+        @include lg-min {
             grid-template-areas: 'b1 b1 b2 b3'
-            'b4 b5 b6 b6';
+                'b4 b5 b6 b6';
             grid-template-columns: repeat(4, 1fr);
         }
-        @include lg-md
-        {
+
+        @include lg-md {
             grid-template-areas: 'b1 b1 b2'
-            'b3 b4 b4'
-            'b5 b5 b6';
+                'b3 b4 b4'
+                'b5 b5 b6';
             grid-template-columns: repeat(3, 1fr);
         }
-        @include md-sm
-        {
+
+        @include md-sm {
             grid-template-areas: 'b1 b2'
-            'b3 b4'
-            'b5 b6';
+                'b3 b4'
+                'b5 b6';
             grid-template-columns: repeat(2, 1fr);
         }
-        @include sm
-        {
+
+        @include sm {
             grid-template-areas: 'b1'
-            'b2'
-            'b3'
-            'b4'
-            'b5'
-            'b6';
+                'b2'
+                'b3'
+                'b4'
+                'b5'
+                'b6';
             grid-template-columns: repeat(1, 1fr);
             grid-template-rows: 1fr;
         }
     }
 
-    &-block
-    {
+    &-block {
         transition: background-color .5s;
 
         background-color: #eee;
 
-        &:hover .post-block-image
-        {
+        &:hover .post-block-image {
             transform: scale(1.1);
         }
 
-        &:hover
-        {
+        &:hover {
             background-color: #d8d8d8;
         }
 
-        &:hover p
-        {
+        &:hover p {
             color: $color-primary;
         }
 
-        &:hover h3
-        {
+        &:hover h3 {
             color: $color-primary;
         }
 
-        &-link
-        {
+        &-link {
             display: grid;
             overflow: hidden;
 
@@ -990,38 +917,31 @@ ul
             grid-template-rows: 300px 1fr;
         }
 
-        &:nth-child(1)
-        {
+        &:nth-child(1) {
             grid-area: b1;
         }
 
-        &:nth-child(2)
-        {
+        &:nth-child(2) {
             grid-area: b2;
         }
 
-        &:nth-child(3)
-        {
+        &:nth-child(3) {
             grid-area: b3;
         }
 
-        &:nth-child(4)
-        {
+        &:nth-child(4) {
             grid-area: b4;
         }
 
-        &:nth-child(5)
-        {
+        &:nth-child(5) {
             grid-area: b5;
         }
 
-        &:nth-child(6)
-        {
+        &:nth-child(6) {
             grid-area: b6;
         }
 
-        &-image
-        {
+        &-image {
             display: flex;
             overflow: hidden;
 
@@ -1032,16 +952,14 @@ ul
             align-content: center;
             justify-content: center;
 
-            & img
-            {
+            & img {
                 width: 100%;
 
                 object-fit: cover;
             }
         }
 
-        &-title
-        {
+        &-title {
             display: grid;
 
             padding: 20px;
@@ -1050,8 +968,7 @@ ul
 
             align-content: center;
 
-            & h3
-            {
+            & h3 {
                 font-family: $font-header;
                 font-size: 18px;
                 line-height: 1.11;
@@ -1062,8 +979,7 @@ ul
                 color: $color-gray;
             }
 
-            &-text
-            {
+            &-text {
                 font-size: 16px;
                 line-height: 1.25;
 
@@ -1075,16 +991,14 @@ ul
         }
     }
 
-    &-button
-    {
+    &-button {
         display: flex;
 
         justify-content: center;
 
 
 
-        &-link
-        {
+        &-link {
             font-family: $font-main;
             font-size: 18px;
             line-height: 1.33;
@@ -1102,13 +1016,11 @@ ul
             border: 2px solid $color-primary;
             background-color: rgba(45, 54, 81, .8);
 
-            @include sm
-            {
+            @include sm {
                 width: 100%;
             }
 
-            &:hover
-            {
+            &:hover {
                 border: 2px solid rgba(45, 54, 81, .8);
                 background-color: $color-accent;
             }
@@ -1116,15 +1028,13 @@ ul
     }
 }
 
-.footer
-{
+.footer {
     max-height: 250px;
     padding: 50px 20px 70px;
 
     background-color: $color-primary;
 
-    &-container
-    {
+    &-container {
         max-width: 1340px;
         margin: 0 auto;
         padding: 0 20px;
@@ -1132,8 +1042,7 @@ ul
         text-align: center;
     }
 
-    &-icon
-    {
+    &-icon {
         // gap: 10px;
         position: relative;
 
@@ -1145,8 +1054,7 @@ ul
         grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
         justify-content: center;
 
-        &:after
-        {
+        &:after {
             position: absolute;
             bottom: -7px;
             left: calc(50% - 75px / 2);
@@ -1160,8 +1068,7 @@ ul
         }
     }
 
-    &-title p:nth-of-type(1)
-    {
+    &-title p:nth-of-type(1) {
         font-weight: 100;
 
         letter-spacing: .33em;
@@ -1169,8 +1076,7 @@ ul
         color: $color-gray;
     }
 
-    &-title p:nth-of-type(2)
-    {
+    &-title p:nth-of-type(2) {
         font-family: $font-main;
         font-weight: bold;
         line-height: 1.25;
@@ -1183,21 +1089,18 @@ ul
     }
 }
 
-.social a
-{
+.social a {
     float: left;
 
     transition: color .5s;
 
     border-radius: 5px;
 
-    &:hover
-    {
+    &:hover {
         color: $color-accent;
     }
 }
 
-.fa-2x
-{
+.fa-2x {
     font-size: 2.3em;
 }
