@@ -90,9 +90,10 @@ ul {
         left: 0;
 
         width: 100%;
-        // padding: 20px;
+
 
         @include md {
+            padding: 12px 0;
             background-color: rgba(68, 89, 110, .25);
         }
 
@@ -139,7 +140,7 @@ ul {
 
                 width: 30px;
                 height: 22.5px;
-                margin: 25px;
+                margin: 24px 0;
 
                 cursor: pointer;
                 transition: .5s ease-in-out;
@@ -220,8 +221,10 @@ ul {
                 @include md {
                     position: absolute;
                     top: 100%;
+                    right: 20px;
 
                     display: none;
+                    padding-left: 0;
 
                     text-align: right;
 
@@ -255,14 +258,19 @@ ul {
             font-family: $font-header;
             font-weight: 300;
             line-height: 1.2em;
-            margin: -11px 0 50px 0px;
+
 
             letter-spacing: .08em;
 
             color: $color-light;
 
+            @include lg{
+                margin: 0 0 43px;
+            }
+
             @include lg-min {
                 font-size: 3.75em;
+                margin: 0 0 53px;
             }
 
             @include lg-md {
@@ -355,11 +363,15 @@ ul {
 }
 
 
-
-
 .skills {
-    padding: 10px;
+    // padding: 10px;
 
+    @include sm-min{
+        padding: 10px 10px 40px;
+    }
+     @include sm {
+         padding: $gap;
+     }
     &-container {
         display: grid;
 
@@ -405,7 +417,7 @@ ul {
                 'a8'
                 'a9';
             grid-template-columns: repeat(1, 1fr);
-            grid-gap: $gap / 2;
+            grid-gap: $gap;
         }
     }
 
@@ -458,6 +470,10 @@ ul {
 
             justify-content: center;
             align-items: center;
+
+            @include md{
+                font-size: 1.125rem;
+            }
 
             &:hover {
                 color: $color-accent;
@@ -525,9 +541,13 @@ ul {
     &-button {
         display: flex;
 
-        margin: 0 0 40px 0;
+        // margin: 0 0 40px 0;
 
         justify-content: center;
+
+        @include sm {
+            margin: 0;
+        }
 
         &-link {
             font-family: $font-main;
@@ -567,25 +587,28 @@ ul {
 
         max-width: 1340px;
         margin: auto;
-        padding: 97px 20px 86px 20px;
 
         @include lg-min {
             grid-template-columns: 1fr 271px;
             gap: 100px;
+            padding: 97px 20px 86px 20px;
         }
 
         @include lg-md {
             grid-template-columns: 1fr 271px;
             gap: 40px;
+            padding: 80px 20px 80px 20px;
         }
 
         @include md-sm {
             grid-template-columns: 1fr 236px;
             gap: 20px;
+            padding: 60px 20px 60px 20px;
         }
 
         @include sm {
             grid-template-columns: 1fr;
+             padding: 60px 20px 60px 20px;
         }
     }
 
@@ -1048,7 +1071,7 @@ ul {
 
         display: grid;
 
-        margin-bottom: 30px;
+        margin: 9px 0 30px 6px;
         padding-bottom: 20px;
 
         grid-template-columns: repeat(auto-fit, minmax(50px, max-content));

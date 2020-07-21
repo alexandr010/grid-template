@@ -569,7 +569,7 @@ ul {
   position: relative;
   width: 30px;
   height: 22.5px;
-  margin: 25px;
+  margin: 24px 0;
   cursor: pointer;
   -webkit-transition: .5s ease-in-out;
   -o-transition: .5s ease-in-out;
@@ -656,7 +656,6 @@ ul {
   font-family: "Roboto Slab", serif;
   font-weight: 300;
   line-height: 1.2em;
-  margin: -11px 0 50px 0px;
   letter-spacing: .08em;
   color: #fff;
 }
@@ -683,10 +682,6 @@ ul {
 
 .header-content-btn:hover {
   background-color: #d66926;
-}
-
-.skills {
-  padding: 10px;
 }
 
 .skills-container {
@@ -816,7 +811,6 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 0 40px 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -852,7 +846,6 @@ ul {
   display: grid;
   max-width: 1340px;
   margin: auto;
-  padding: 97px 20px 86px 20px;
 }
 
 .about-content {
@@ -1141,7 +1134,7 @@ ul {
 .footer-icon {
   position: relative;
   display: grid;
-  margin-bottom: 30px;
+  margin: 9px 0 30px 6px;
   padding-bottom: 20px;
   grid-template-columns: repeat(auto-fit, minmax(50px, -webkit-max-content));
   grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
@@ -1191,6 +1184,12 @@ ul {
   font-size: 2.3em;
 }
 
+@media (min-width: 576px) {
+  .skills {
+    padding: 10px 10px 40px;
+  }
+}
+
 @media (min-width: 768px) {
   .header-menu-link-btn {
     display: none;
@@ -1209,6 +1208,7 @@ ul {
 @media (min-width: 992px) {
   .header-content-title {
     font-size: 3.75em;
+    margin: 0 0 53px;
   }
   .header-content-btn {
     font-size: 18px;
@@ -1226,6 +1226,7 @@ ul {
   .about-container {
     grid-template-columns: 1fr 271px;
     gap: 100px;
+    padding: 97px 20px 86px 20px;
   }
   .about-content {
     font-size: 1.125rem;
@@ -1257,6 +1258,12 @@ ul {
   }
 }
 
+@media (max-width: 991.8px) {
+  .header-content-title {
+    margin: 0 0 43px;
+  }
+}
+
 @media (max-width: 991.8px) and (min-width: 768px) {
   .header-content-title {
     font-size: 2.5em;
@@ -1277,6 +1284,7 @@ ul {
   .about-container {
     grid-template-columns: 1fr 271px;
     gap: 40px;
+    padding: 80px 20px 80px 20px;
   }
   .about-content-title {
     font-size: 2rem;
@@ -1307,6 +1315,7 @@ ul {
 
 @media (max-width: 767.8px) {
   .header-menu {
+    padding: 12px 0;
     background-color: rgba(68, 89, 110, 0.25);
   }
   .header-menu-link-btn {
@@ -1315,9 +1324,14 @@ ul {
   .header-menu-link-list {
     position: absolute;
     top: 100%;
+    right: 20px;
     display: none;
+    padding-left: 0;
     text-align: right;
     background-color: rgba(68, 89, 110, 0.9);
+  }
+  .skills-block-link {
+    font-size: 1.125rem;
   }
 }
 
@@ -1341,6 +1355,7 @@ ul {
   .about-container {
     grid-template-columns: 1fr 236px;
     gap: 20px;
+    padding: 60px 20px 60px 20px;
   }
   .about-content-title {
     font-size: 1.5rem;
@@ -1393,16 +1408,23 @@ ul {
     padding: 8px 37px 10px 37px;
     letter-spacing: 1.6px;
   }
+  .skills {
+    padding: 20px;
+  }
   .skills-container {
     grid-template-areas: 'a1' 'a2' 'a3' 'a4' 'a5' 'a6' 'a7' 'a8' 'a9';
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 10px;
+    grid-gap: 20px;
+  }
+  .skills-button {
+    margin: 0;
   }
   .skills-button-link {
     width: 100%;
   }
   .about-container {
     grid-template-columns: 1fr;
+    padding: 60px 20px 60px 20px;
   }
   .about-content-title {
     font-size: 1.5rem;
