@@ -527,6 +527,7 @@ ul {
   z-index: 1;
   top: 0;
   left: 0;
+  padding: 3px 0 0 0;
   width: 100%;
 }
 
@@ -550,7 +551,7 @@ ul {
   width: 80px;
   height: 60px;
   margin-right: 3px;
-  padding: 14px 1px 13px 5px;
+  padding: 13px 1px 12px 5px;
   text-align: center;
   border: solid 3px #d53d27;
 }
@@ -563,6 +564,7 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   justify-items: end;
+  margin: 0 1px 0 0;
 }
 
 .header-menu-link-btn {
@@ -1316,7 +1318,7 @@ ul {
 
 @media (max-width: 767.8px) {
   .header-menu {
-    padding: 12px 0;
+    padding: 16px 0;
     background-color: rgba(68, 89, 110, 0.25);
   }
   .header-menu-link-btn {
